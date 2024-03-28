@@ -1,3 +1,9 @@
+https://seraphim.gitbook.io/volodyazetkin2024gitbook/modul-v.-docker-compose-sozdanie-lokalnogo-docker-registry
+https://seraphim.gitbook.io/volodyazetkin2024gitbook/modul-v.-docker-compose-sozdanie-lokalnogo-docker-registry
+https://seraphim.gitbook.io/volodyazetkin2024gitbook/modul-v.-docker-compose-sozdanie-lokalnogo-docker-registry
+
+
+
 Добавление serial порта в Гипервизоре:
 ```
 qm set <VM ID> -serial0 socket
