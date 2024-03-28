@@ -4,6 +4,10 @@ https://seraphim.gitbook.io/volodyazetkin2024gitbook/modul-v.-docker-compose-soz
 
 
 
+https://github.com/golang/website/blob/master/go-app-deploy.sh
+
+https://github.com/RomNero/YouTube-Infos/blob/main/LoadBalancer/Create_HA_LB_haproxy_keepalived
+
 Добавление serial порта в Гипервизоре:
 ```
 qm set <VM ID> -serial0 socket
