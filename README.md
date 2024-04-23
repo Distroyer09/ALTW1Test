@@ -3,8 +3,49 @@ https://seraphim.gitbook.io/volodyazetkin2024gitbook/modul-v.-docker-compose-soz
 https://seraphim.gitbook.io/volodyazetkin2024gitbook/modul-v.-docker-compose-sozdanie-lokalnogo-docker-registry
 
 
+
+
+
+
 https://github.com/Lisichka63/gaid
 
+
+Для настройки NAT с использованием iptables на вашем ISP с портами ens33 (глобальный), ens36 и ens37, вы можете следовать следующим шагам:
+
+1. **Определите интерфейсы**:
+   - ens33 будет использоваться как интерфейс с глобальным IP-адресом.
+   - ens36 и ens37 будут использоваться для локальных сетей.
+
+2. **Настройте IP-адреса**:
+   - Назначьте внешний IP-адрес интерфейсу ens33.
+   - Назначьте внутренние IP-адреса интерфейсам ens36 и ens37.
+
+3. **Включите IP-пересылку**:
+   ```bash
+   echo 1 > /proc/sys/net/ipv4/ip_forward
+   ```
+
+4. **Настройте правила NAT**:
+   - Для маскарадинга исходящего трафика:
+     ```bash
+     iptables -t nat -A POSTROUTING -o ens33 -j MASQUERADE
+     ```
+   - Для разрешения пересылки трафика между интерфейсами:
+     ```bash
+     iptables -A FORWARD -i ens36 -o ens33 -j ACCEPT
+     iptables -A FORWARD -i ens37 -o ens33 -j ACCEPT
+     iptables -A FORWARD -i ens33 -m state --state RELATED,ESTABLISHED -j ACCEPT
+     ```
+
+5. **Сохраните правила iptables**:
+   - Сохраните текущие правила iptables, чтобы они применялись при перезагрузке системы.
+
+Эти шаги являются общими рекомендациями. Для более детальной информации и инструкций, пожалуйста, обратитесь к документации по iptables или к специализированным ресурсам¹²³.
+
+Источник: беседа с Bing, 23.04.2024
+(1) Step-By-Step Configuration of NAT with iptables - HowtoForge. https://www.howtoforge.com/nat_iptables.
+(2) Введение в Iptables / Хабр - Habr. https://habr.com/ru/articles/747616/.
+(3) Основы iptables для начинающих. Часть 4. Таблица nat - типовые сценарии .... https://interface31.ru/tech_it/2021/08/osnovy-iptables-dlya-nachinayushhih-chast-4-tablica-nat-tipovye-scenarii-ispolzovaniya.html.
 
 
 https://www.8host.com/blog/bind-kak-dns-server-dlya-chastnoj-seti-v-debian-9/
