@@ -11,8 +11,32 @@ https://wiki.debian.org/Bind9
 
 https://stupin.su/blog/openvswitch/
 
+RTR-R{
 
+interface   gigabitethernet1 
+ip   address   5.5.5.100   255.255.255.0
+no   shutdown
+exit
+interface   gigabitethernet2 
+ip   address   172.16.100.254   255.255.255.0
+no   shutdown
+exit
+и проверяются командой     show   ip   interface   brief.
 
+}
+
+RTR-L{
+
+interface   gigabitethernet1 
+ip   address   4.4.4.100   255.255.255.0
+no   shutdown
+exit
+interface   gigabitethernet2 
+ip   address   192.168.100.254   255.255.255.0
+no   shutdown
+exit
+
+}
 
 
 
