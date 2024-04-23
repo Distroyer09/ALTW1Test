@@ -3,6 +3,20 @@ https://seraphim.gitbook.io/volodyazetkin2024gitbook/modul-v.-docker-compose-soz
 https://seraphim.gitbook.io/volodyazetkin2024gitbook/modul-v.-docker-compose-sozdanie-lokalnogo-docker-registry
 
 
+https://www.8host.com/blog/bind-kak-dns-server-dlya-chastnoj-seti-v-debian-9/
+
+https://www.angald.ru/ustanovka-i-nastrojka-bind-na-debian/
+
+https://wiki.debian.org/Bind9
+
+https://stupin.su/blog/openvswitch/
+
+
+
+
+
+
+
 
 https://github.com/golang/website/blob/master/go-app-deploy.sh
 
